@@ -1,0 +1,6 @@
+<% content_for :title do %>
+   food &ndash; <%= DateTime.now %>
+ <% end %>
+<%= render 'form', entry: @entry %>
+
+<%= link_to 'Back', entries_path %>

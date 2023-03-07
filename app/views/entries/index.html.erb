@@ -1,0 +1,44 @@
+ 
+ <p id="notice"><%= notice %></p>
+ <% content_for :title do %>
+   food &ndash; <%= DateTime.now.to_s(:nice_date)%>
+ <% end %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Meal type</th>
+      <th>Calories</th>
+      <th>Protiens</th>
+      <th>Carboh</th>
+      <th>Fats</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <div class="columns mt-6 is-centered">
+    <% @entries.each do |entry| %>
+    <div class="column is-one quarter">
+      <tr>
+        <td><%= entry.meal_type %></td>
+        <td><%= entry.calories %></td>
+        <td><%= entry.protiens %></td>
+        <td><%= entry.carboh %></td>
+        <td><%= entry.fats %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      </div>
+      </div>
+    <% end %>
+    
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_entry_path %>
+<%=link_to "show meal", archive_index_path%>

@@ -1,0 +1,15 @@
+<table>
+ <tbody>
+<%@entries.each do|day,entries|%>
+ <div>
+ <%entries.each do|entry|%>
+   <header class = "card-header">
+   
+       <%=entry.meal_type%>
+    </header>
+ </div>
+     <%=entry.protiens%>
+  <%end%>
+ <%end%>  
+ </table>
+ </tbody>
